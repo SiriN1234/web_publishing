@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #container{
+             display:flex;
+             flex-direction:column;
+
+         }
+         header{
+             border-bottom:1px solid gray;
+             padding-left:20px;
+
+         }
+         footer{
+             border-top:1px solid gray;
+             border-bottom:1px solid gray;
+             border-left:2px solid gray;
+             border-right:2px solid gray;
+             padding-left:10px;
+             padding-top:5px;
+             padding-bottom:5px;
+         }
+         .content{
+             display:flex;
+             flex-direction:row;
+         }
+         .content nav{
+             border-left:2px solid gray;
+             border-right:2px solid gray;
+             padding-left:3px;
+         }
+         .content aside{
+             border-left:2px solid gray;
+             border-right:2px solid gray;
+         }
+         nav, aside{
+             flex-basis:100px;
+             flex-shrink:0;
+         }
+         main{
+             padding:10px;
+         }
+         aside{
+             padding:5px 0px 0px 5px;
+         }
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <header>
+            <h1>휴먼</h1>
+        </header>
+
+        <section class = "content">
+            <nav>
+                <li>학원 소개</li>
+                <li>과정 소개</li>
+                <li>게시판</li>
+            </nav>
+
+            <main>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum veritatis, quos cumque, fugiat, possimus cum itaque praesentium eos quam inventore nulla maiores corrupti. Magni a eveniet consequuntur reiciendis explicabo praesentium.
+                Dignissimos, hic quibusdam aliquam, cum culpa assumenda fugiat minima nulla enim quia temporibus sapiente voluptates unde modi cupiditate aliquid commodi ducimus, dolore numquam vitae provident? Perspiciatis possimus laudantium natus tenetur?
+            </main>
+
+            <aside>
+                <img width = 100px height = 100px src = "https://toppng.com/uploads/preview/ice-free-png-transparent-ice-cubes-11562911205ikxf7wxvgg.png">
+            </aside>
+        </section>
+
+        <footer>
+            <a href=""https://www.human.or.kr">홈페이지</a>
+        </footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈</title>
+    <link href = "./css/style.css" type = "text/css" rel = "stylesheet">
+    <style>
+        h1{
+            color:green;
+        }
+        #main{
+            color:aqua;
+        }
+        .main_class{
+            color:brown;
+        }
+        <!--
+        h2{
+            color:red;
+        }
+        -->
+        h2[id]{
+            color:violet
+        }
+        #human-id{
+            color:green;
+        }
+        .human-class{
+            color:yellow;
+        }
+    </style>
+    <!--
+        우선순위 id - class - tag
+        id는 #
+        class는 .
+        tag는 없음
+    -->
+
+</head>
+<body>
+    <h1 style = "color:red">메인메뉴</h1>
+    <h1 id = "main">메인메뉴2</h1>
+    <h1 class = "main_class">메인메뉴3</h1>
+    <h2 id = "human-id" class = "human-class">휴먼</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JAVA</li>
+    </ul>
+</body>
+</html>
