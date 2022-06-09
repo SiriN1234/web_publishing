@@ -13,6 +13,6 @@ window.addEventListener("load", function(){
             img.src = "./images/img" + srcInput.value + ".jpg";
 
         colorInput.style["border-color"] = colorInput.value;
-        img.style["border-color"] = colorInput.value;
+        img.style.borderColor = colorInput.value;
     }
 });
