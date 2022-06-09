@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printResult4(){
+            let x,y;
+            x=eval(prompt ("x값 입력 = ", 0));
+            y=eval(prompt ("y값 입력 = ", 0));
+            btn4.type = "text";
+            btn4.value = x+y;
+        }
+        function init(){
+            btn4.printResult4();    // 함수 호출.
+        }
+        window.onload=init;     
+        //문서가 모두 load가 되었을때. init 함수를 실행
+    </script>
+</head>
+<body>
+    <input type="button" value="클릭4" id="btn4">
+</body>
+</html>

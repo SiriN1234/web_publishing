@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var exam1 = {id:1, title:"human"}; //JSON
+        var exam2 = {"id":1, "title":"human"}; //일반적인 JSON 형식
+        var exam3 = '{"id":1, "title":"human"}'; 
+        //JSON 데이터를 다른 웹페이지에서 전달받을 때의 형식 
+
+        console.log(exam3);     // 문자열 형태
+        let data1 = JSON.parse(exam3);    
+        // 문자열 JSON 파일 형태로 파싱이 가능. 파싱을 통해서 분리
+        console.log(data1);     
+        // id, title 분리된 데이터로 확인 가능
+        // exam2의 형태로 관리할 수 있도록 처리가 됨.
+        console.log(data1["id"],data1["title"] ); 
+        //id, title 별도로 구분해서 관리 가능
+
+        let data2 = (JSON.parse(exam1));    
+        // 문자열이 아니기 때문에. 에러발생.
+        let data3 = JSON.stringify(exam2);
+        // exam2를 문자열로 묶은 JSON 파일을 만들어 줌.
+        // data3은 문자열.
+        let data4 = JSON.parse(data3);  // 파싱 가능
+        console.log(data4["id"],data4["title"] );
+        //OK
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       let x=3;
+       let y=3;
+       document.write(x==y);    // 값이 같으므로 true
+       document.write("<br>");
+       document.write(x===y);   // 주소가 같으므로 true
+       document.write("<br>");
+       document.write("<br>");
+
+       let a=3;
+       let b=new Number(3);     
+       document.write(a==b);    // 값이 같으므로 true
+       document.write("<br>");
+       document.write(a===b);   
+       // b는 새로운 객체로 생성되므로 주소는 다름
+       // false
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

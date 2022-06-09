@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*
+        let a=1;    
+        function f1(){
+//            let a = 1;
+            console.log("함수안에서 : ", a);    // 1
+        }
+        f1();
+        console.log("함수밖에서 : ", a);    
+        // 함수안에서 선언시 레퍼런스 에러
+        // 함수밖에서 let a=1; 선언시 이상없음
+*/       
+        function f2(){
+            a = 1;      // 전역 변수화. 호이스팅. 
+            console.log("함수안에서 : ", a);    // 1
+        }
+        f2();
+        console.log("함수밖에서 : ", a);    // OK
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
