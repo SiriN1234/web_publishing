@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <!-- www.jquery.com -> download jquery -> 링크를 다른 이름으로 저장 or cdn -->
+    <!-- <script src = "./css/jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+            $(".btn1").on("click", function(){
+                let ts = $(this);
+                if(ts.text() == "숨김"){
+                    // slideUp 뒤의 숫자는 동작 시간을 의미 함
+                    // 1000 = 1초
+                    $(".wrap").slideUp(1, function(){
+                        // button의 text를 바꿈(숨김 -> 노출)
+                        $(".btn1").text("노출");
+                    });
+                }
+                else {
+                    $(".wrap").slideDown(1, function(){
+                        $(".btn1").text("숨김");
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p class = "btn-wrap">
+        <button class = "btn1">숨김</button>
+    </p>
+    <div class = "wrap">
+        <p class = "txt1">내용1</p>
+        <p class = "txt2">내용2</p>
+    </div>
+</body>
+</html>

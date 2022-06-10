@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        /*
+            margin이 8px, 그렇기 때문에 offset 값이 8만큼 차이가 남
+            body도 margin을 0px(상하), 0px(좌우)를 의미함
+        */
+        body{
+            margin : 0px 0px;
+        }
+        /* 
+            border의 1px 때문에 1씩 차이나는 것은 감안해야 함
+            width/height를 늘려서 스크롤이 생기는 상황에서는 pageXY와 clientXY는 다르게 표현됨을 확인할 수 있다
+        */
+        .container{
+            width : 1500px;
+            height : 1500px;
+            border : 1px solid gray;
+        }
+        .box{
+            width : 100px;
+            height : 100px;
+            border : 1px solid blue;
+            background-color : blue;
+            position : absolute;
+        }
+    </style>
+    <script src = "./event_03.js"></script>
+</head>
+<body>
+    <section id = "section">
+        <div class = "container">
+            <div class = "box">
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

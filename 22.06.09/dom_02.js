@@ -5,6 +5,6 @@ window.addEventListener("load", function(){
     let img = section.querySelector(".img");
 
     changeButton.onclick = function(){
-        img.src = "images/" + imgSelector.value;
+        img.src = "../images/" + imgSelector.value;
     }
 });

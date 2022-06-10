@@ -10,7 +10,7 @@ window.addEventListener("load", function(){
         if(srcInput.value != 1 && srcInput.value != 2 && srcInput.value != 3)
             img.src = "";
         else
-            img.src = "./images/img" + srcInput.value + ".jpg";
+            img.src = "../images/img" + srcInput.value + ".jpg";
 
         colorInput.style["border-color"] = colorInput.value;
         img.style.borderColor = colorInput.value;

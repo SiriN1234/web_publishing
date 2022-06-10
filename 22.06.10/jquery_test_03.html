@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <!-- www.jquery.com -> download jquery -> 링크를 다른 이름으로 저장 or cdn -->
+    <!-- <script src = "./css/jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+            // $(".btn1 a").mouseover(function(){
+            //     alert("버튼에 마우스를 올렸습니다");
+            // });
+            
+            // 2개 이상의 이벤트를 동시에 적용 가능하다
+            // $(".btn1 a").on("mouseover focus", function(){
+            //     // this는 선택된 대상을 의미
+            //     let ts = $(this);
+            //     ts.css("background-color", "yellow");
+            // });
+
+            $(".btn1 a").on("click focus", function(){
+                // 선택된 대상
+                let ts = $(this);
+                // 선택된 대상 다음의 ul 태그 중 visible이 포함된 것이라면 hide()
+                $(".btn1").next("ul").filter(":visible").hide();
+                // 선택된 대상의 부모의 다음 태그를 보여 줌
+                ts.parent().next().show();
+                return false;
+            })
+            
+            
+        });
+    </script>
+</head>
+<body>
+    <p class = "btn1"><a href = "#">이벤트 대상1</a></p>
+    <ul style = "display : none">
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </ul>
+
+    <p class = "btn1"><a href = "#">이벤트 대상2</a></p>
+    <ul style = "display : none">
+        <li>리스트4</li>
+        <li>리스트5</li>
+        <li>리스트6</li>
+    </ul>
+</body>
+</html>
