@@ -145,6 +145,7 @@ preserve-3d; transform:matrix3d(1,0,0,0,0,0.1,0,0,0,0,1,0,0,0,0,1); transition:a
 /*contact us */
 #menu4 .content_wrap{width:800px; margin:100px auto 0 auto; padding:30px; background:rgba(255,255,255, 0.7); border-radius:5px;}
 #menu4 .content_wrap .form_tit{margin-bottom:40px; font-size:24px; font-weight:700; color:#ea657b;}
+/* 이미지 오른쪽 아래에 두기. */
 .formlist{padding-bottom:150px; background:url(../images/contact_bg.png) no-repeat right bottom; background-size:200px;}
 .formlist ul li{margin-bottom:15px; position:relative; padding:0 0 0 150px;}
 .formlist ul li label{display:block; width:150px; position:absolute; left:0; top:0; font-size:14px; color:#555;}

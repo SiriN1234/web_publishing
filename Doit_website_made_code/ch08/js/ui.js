@@ -42,9 +42,10 @@ $(document).ready(function(){
 	});
 	//faq 게시판
 	$(".accordio_box ol li").click(function(){
-		// li 태그 클릭시 모든 on 클래스는 제거 후 
+		// 목록 선택시 on으로 된 class는 모두 제거함.
 		$(".accordio_box ol li").removeClass("on");
-		// 선택된 li 태그에만 클래스를 on으로 추가. 
+		// 선택된 것만 on으로 class 화 함.
+		// TEST : 아래 내용 주석처리하여 선택이 되지 않음을 확인.
 		$(this).addClass("on");
 	});
 });

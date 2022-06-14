@@ -13,6 +13,18 @@
 <meta name="images" property="og:image" content="./images/link_thumb.jpg">
 <meta name="description" property="og:description" content="이지스퍼블리싱">
 <meta name="type" property="og:type" content="article">
+<script>
+	// 함수로 호출하여 간략하게 만듦
+	function click_page(file) {
+		fetch(file).then(function(response) {
+			response.text().then(
+				function(text) {
+					document.querySelector('.notebook').innerHTML = text;
+			});
+		});
+	}
+
+</script>
 <link rel="stylesheet" type="text/css" href="./css/ui.css">
 </head>
 <body>
@@ -94,8 +106,7 @@
 										</ul>
 										<p class="point_text">
 											<strong>문과생도 컴맹도 아무 것도 몰라도 <br />이 한권으로 OK!</strong>
-											이 책으로 공부하면 기초 태그부터 반응형 웹까지 한 번에 배울 수 있습니다. 자세한 설명과
-											간단명료한 많은 예제로 웹 표준의 정석을 익힐 수 있습니다.
+											이 책으로 공부하면 기초 태그부터 반응형 웹까지 한 번에 배울 수 있습니다. 자세한 설명과 간단명료한 많은 예제로 웹 표준의 정석을 익힐 수 있습니다.
 										</p>
 										<a href="http://easyspub.co.kr/20_Menu/BookView/119/PUB" class="commbtn pink" target="blank">구매사이트</a>
 									</section>
@@ -108,14 +119,14 @@
 							<button class="roll_right"></button>
 							<div class="book_roll">
 								<ul>
-			                        <li><img src="./images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></li>
-			                        <li><img src="./images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></li>
-			                        <li><img src="./images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></li>
-			                        <li><img src="./images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></li>
-			                        <li><img src="./images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></li>
-			                        <li><img src="./images/book6.png" alt="Do it! 반응형 웹 만들기" /></li>
-			                        <li><img src="./images/book7.png" alt="Do it! Vue.js 입문" /></li>
-			                        <li><img src="./images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></li>
+			                        <li data-url="book1.html"><a onclick="click_page('book1.html')"><img src="./images/book1.png" alt="Do it! HTML5+CSS3 웹 표준의 정석 <개정판>" /></a></li>
+			                        <li data-url="book2.html"><a onclick="click_page('book2.html')"><img src="./images/book2.png" alt="Do it! 프런트엔드 웹 디자인 입문 - 전면 개정판" /></a></li>
+			                        <li data-url="book3.html"><a onclick="click_page('book3.html')"><img src="./images/book3.png" alt="Do it! 웹 프로그래밍을 위한 자바스크립트 기본 편" /></a></li>
+			                        <li data-url="book4.html"><a onclick="click_page('book4.html')"><img src="./images/book4.png" alt="Do it! 자바스크립트 + 제이쿼리 - 전면 개정판" /></a></li>
+			                        <li data-url="book5.html"><a onclick="click_page('book5.html')"><img src="./images/book5.png" alt="Do it! 웹 사이트 기획 입문" /></a></li>
+			                        <li data-url="book6.html"><a onclick="click_page('book6.html')"><img src="./images/book6.png" alt="Do it! 반응형 웹 만들기" /></a></li>
+			                        <li data-url="book7.html"><a onclick="click_page('book7.html')"><img src="./images/book7.png" alt="Do it! Vue.js 입문" /></a></li>
+			                        <li data-url="book8.html"><a onclick="click_page('book8.html')"><img src="./images/book8.png" alt="Do it! 쉽게 만드는 워드프레스 웹사이트" /></a></li>
 			                      </ul>
 							</div>
 						</div>

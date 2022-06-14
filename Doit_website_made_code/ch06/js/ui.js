@@ -20,12 +20,12 @@ $(document).ready(function(){
 	});
 	//롤링배너 왼쪽
 	$(".roll_left").click(function(){
-		// LI 태그 전체중에 첫번째에 있는 LI 태그를 ".book_roll li:last-child" 뒤로 이동해라
+		// 첫번째(eq(0))의 것을 last-child 뒤로 붙임
 		$(".book_roll li").eq(0).insertAfter(".book_roll li:last-child");
 	});
 	//롤링배너 오른쪽
 	$(".roll_right").click(function(){
-		// LI 태그 전체중에 끝(-1)에 있는 LI 태그를 ".book_roll li:first-child" 앞으로 이동해라
+		// 마지막번째(eq(-1))의 것을 first-child 앞으로 붙임
 		$(".book_roll li").eq(-1).insertBefore(".book_roll li:first-child");
 	});
 });

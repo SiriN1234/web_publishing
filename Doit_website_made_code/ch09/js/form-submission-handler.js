@@ -1,3 +1,5 @@
+const { log } = require("winjs");
+
 (function() {
   function validEmail(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -14,8 +16,10 @@
   }
 
   // get all data in form and return object
+  // form에 대한 데이터 정합성 확인.
   function getFormData(form) {
     var elements = form.elements;
+    console.log(elements);
 
     var fields = Object.keys(elements).filter(function(k) {
           return (elements[k].name !== "honeypot");
@@ -58,11 +62,15 @@
     console.log(formData);
     return formData;
   }
-
+// 2번째 수행됨.
   function handleFormSubmit(event) {  // handles form submit without any jquery
     event.preventDefault();           // we are submitting via xhr below
+    // 선택된 것은 form임. 
     var form = event.target;
+    console.log(form);
+    // form의 데이터를 data 객체에 입력함.
     var data = getFormData(form);         // get the values submitted in the form
+    console.log(data);
 
     /* OPTION: Remove this comment to enable SPAM prevention, see README.md
     if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
@@ -105,12 +113,17 @@
     }
   }
   
+  // 첫번째로 수행됨.
   function loaded() {
     console.log("Contact form submission handler loaded successfully.");
     // bind to the submit event of our form
+    // form 태그 안 gform 클래스 선택 
+    // 1개 뿐이므로 1개 배열이 선택됨.
     var forms = document.querySelectorAll("form.gform");
     for (var i = 0; i < forms.length; i++) {
+      // submit 버튼 클릭시
       forms[i].addEventListener("submit", handleFormSubmit, false);
+      console.log("aa");
     }
   };
   document.addEventListener("DOMContentLoaded", loaded, false);

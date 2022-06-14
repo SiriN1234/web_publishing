@@ -79,6 +79,11 @@ footer > a.instar:hover{background:url(../images/social_b_instar_hover.png) no-r
 #container #menu4 .conbox:before{background:url(../images/main_ico4.png) no-repeat; width:350px; height:400px; right:-170px; top:100px; background-size:100%;}
 /*영역 전후 구분하기*/
 #container .content h2{opacity:0;}
+/* content this가 되면 h2가 살아남 (opacity 1이 됨) */
+/* 회사소개 시간을 조정함.*/
+/* transition은 애니메이션 동작시간이고, transition-delay는 시작하기 전 대기시간임*/
+/* TEST1 :  transition 10s로 변경 후 확인*/
+/* TEST2 :  transition-delay 10s로 변경 후 확인*/
 #container .content.this h2{height:auto; padding:30px 0 20px 50px; color:#000; position:relative; background:#fff; font-size:28px; font-weight:400; opacity:1; transition:all .6s; transition-delay:1.2s;}
 #container .content.this h2:after{content:""; width:100%; height:8px; background:#ed3140; position:absolute; left:0; bottom:0;}
 #container .content .conbox .content_wrap{opacity:0;}
@@ -105,40 +110,49 @@ footer > a.instar:hover{background:url(../images/social_b_instar_hover.png) no-r
 .text_box:nth-last-child(1) h4{color:#ed3140;}
 /*도서소개 페이지 만들기*/
 #menu2.content h3{font-size:0px;}
-/* 백그라운드로 이미지를 넣고, 100%를 넣는 이유는 Max-Width가 1100px까지이므로 1100px 이상에서는 적용이 안되기 때문에 100%로 재설정함. */
+/* max-width:100%로 함으로써 해상도가 더 커져도 화면에 꽉차게 보임. (노트북 뒤의 자동차를 포함하는 이미지임.) */
 #menu2.content.this .conbox{background:url(../images/bookbg.png) no-repeat -15px 360px; max-width:100%;}
-/* top,bottom에만 마진적용. left,right는 auto로 동일하게 적용.  */
-/* position:relative는 부모의 위치가 변할때 같이 이동함. 해상도 변경에 따라 부모의 위치변경이 있을 수 있음*/
+/* 노트북 이미지를 표시함. */
 .notebook{width:954px; height:650px; margin:100px auto 0 auto; background:url(../images/mackbook.png) no-repeat; background-size:954px; position:relative;}
+/* 노트북을 포함한 전체의 content를 표시함. */
+/* TEST top/left 값의 변경 확인 */
 .detail_content{width:719px; height:453px; position:absolute; left:117px; top:38px; padding:30px 0;}
-/* float으로 수평으로 나열될 수 있음. 왼쪽에 붙여서 시작함. */
-/* float으로 수평으로 나열될 수 있음.book desc가 책옆에 붙어 나옴 */
+/* 노트북 안의 책 이미지를 표시함 */
+/* TEST : float:right로 변경시 오른쪽부터 표시함 */
 /* 참고적으로 float으로 지정할 경우는 width가 꼭 있어야 함. 부모를 넘어서지 않도록 고정하는 역할을 함. */
+/* TEST 참고 : float (none, left, right, inherit(부모의 float 속성 상속받음) */
 .img_book{width:270px; float:left;}
+/* 이미지의 크기는 width와 동일하게 적용함. */
 .img_book img{width:270px;}
 .book_description{width:449px; float:left; padding:20px 20px 20px 40px;}
 .detail_content:after{content:""; display:block; clear:both;}
+/* TEST : line-height:100px ==> 항목별 높이가 달라지는 것 확인 가능*/
 .book_description h4{font-size:31px; font-weight:700; color:#f92d68; line-height:31px;}
-
 .book_description ul li em{font-weight:700}
 .point_text{padding:10px 30px 0px 0; font-size:12px; color:#666;}
+/* 과녁과 화살표 이미지를 표시함. */
 .point_text strong{display:block; padding:0 0 10px 46px; background:url(../images/point_bg.png) no-repeat; background-size:40px; font-size:14px; font-weight:700; color:#3c4147;}
 /* padding 상하/좌우가 같을경우 2개로만 표현가능 */
 /* padding 상/좌우/하 일 경우는 3개로만 표현가능 */
 .book_rollwrap{width:954px; height:150px; margin:40px auto 0 auto; padding:0 20px; position:relative;}
 .book_rollwrap > button{display:block; position:absolute; width:20px; height:100%; top:0;}
-/* left 속성이 0임. 그래서 왼쪽으로 붙음 */
+/* 하단의 책 선택 버튼 (왼쪽으로 붙음) */
 .book_rollwrap > button.roll_left{background:url(../images/btn_left.png) no-repeat center center; background-size:20px; left:0;}
-/* right 속성이 0임. 그래서 오른쪽으로 붙음 */
+/* 하단의 책 선택 버튼 (오른쪽으로 붙음) */
 .book_rollwrap > button.roll_right{background:url(../images/btn_right.png) no-repeat center center; background-size:20px; right:0;}
+/* 책의 선택되는 부분 rolling 표현 부분 */
+/* TEST1 : width 50%, height 50%로 변경 후 확인 */
+/* TEST2 : overflow:visible로 변경 후 확인 */
 .book_rollwrap .book_roll{width:100%; height:100%; overflow:hidden;}
-/* 화면에 보이지는 않는 부분이 900%임 */
+/* width를 1000%로 하여 overflow되는 이미지까지 포함함. 단, overflow 되는 부분은 안보임 */
 .book_rollwrap .book_roll ul{width:1000%;}
-/* float:left 이므로 왼쪽부터 오른쪽으로 이동함. */
+/* text-align은 이미지가 load가 안되어 alt 부분이 보일때 사용됨.*/
+/* TEST : 이미지 연결이 안되도록 경로 바꾸고 TEST */
 .book_rollwrap .book_roll ul li{float:left; width:152px; text-align:center;}
 .book_rollwrap .book_roll ul li img{width:100px;}	
 /*공통으로 사용되는 스타일 */
 /*블릿*/
+/* 노트북 안의 저자 및 발행일 표시부분 */
 .bullet_list{margin-top:20px;}
 .bullet_list li{margin-bottom:5px; padding-left:10px; font-size:12px; color:#3c4147; position:relative;}
 .bullet_list li:after{content:""; display:block; width:3px; height:3px; border-radius:50%; background:#3c4147; position:absolute; left:0; top:8px;}

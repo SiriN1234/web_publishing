@@ -140,8 +140,11 @@ preserve-3d; transform:matrix3d(1,0,0,0,0,0.1,0,0,0,0,1,0,0,0,0,1); transition:a
 /* 선택된 것이 class="on" 이므로 아래 화살표가 나옴 */
 .accordio_box ol li.on h4{background:url(../images/select_bullet_down.png) no-repeat right 11px;}
 .accordio_box ol li h4 span{display:inline-block; margin-right:10px; font-weight:900}
+/* 선택되지 않은 상세 내용은 hidden 처리하여 안보이게 함. */
+/* TEST : visibility:visible; opacity:1 ==> 이렇게 하면 선택되지 않은 것도 상세항목이 겹쳐져서 보임*/
 .accordio_box ol li p{height:0; visibility:hidden; opacity:0;}
 .accordio_box ol li.on p{height:auto; padding:30px 100px 70px 200px; background-color:#eee; background-size:100px auto; background-repeat: no-repeat; visibility:visible; opacity:1;}
+/* 선택된 항목의 이미지를 보이게 함. */
 .accordio_box ol li:nth-of-type(1) p{background-image:url(../images/board_boy.png); background-position:40px -1px;}
 .accordio_box ol li:nth-of-type(2) p{background-image:url(../images/read_boy.png); background-position:40px 20px;}
 .accordio_box ol li:nth-of-type(3) p{background-image:url(../images/shopping_boy.png); background-position:40px 13px;}

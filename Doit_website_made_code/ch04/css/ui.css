@@ -27,7 +27,6 @@ html,body{overflow:hidden;height:100%;}
 /*layout*/
 #wrap{width:100%; height:100%; padding-right:180px;} 
 #wrap > h1{font-size:0;}
-/* cursor:pointer라는 것은 마우스가 위로 가면 손가락이 나옴. */
 header .logo_box{position:absolute; right:35px; top:75px; cursor:pointer;}
 header .logo_box img{width:100px;}
 #wrap header{width:180px; height:100%; position:fixed; right:0px; top:0px; background:url(../images/menu_bg1.png) repeat-y; z-index:11;}
@@ -35,9 +34,7 @@ header .logo_box img{width:100px;}
 #wrap header nav ul{width:100%; height:100%; display:flex; flex-direction:column; justify-content:center;}
 #wrap header nav ul li{margin:0px 0px 10px 30px; padding-left:15px; position:relative;} 
 #wrap header nav ul li a{font-size:16px; color:#fff; font-weight:600; line-height:30px;}
-/* display : none(안보임), block(기본값), inline(본인영역만큼만. width 미적용), inline-block(임의로 크기 조정가능) */
 #wrap header nav ul li:after{content:""; display:block; width:5px; height:5px; border-radius:50%; background:#fff; position:absolute; left:0px; top:13px;}
-/* on은 JQuery에서 선택된 것에 대해서 addClass(on) 처리하고 있음. 선택된 것은 붉은색으로 표시*/
 #wrap header nav ul li:hover a,#wrap header nav ul li.on a{color:#ed3140;} 
 #wrap header nav ul li:hover:after,#wrap header nav ul li.on:after{background:#ed3140;}
 footer{width:180px; position:fixed; right:0px; bottom:0px; padding:0px 20px 30px 20px; font-size:11px; color:#7e7e7e; z-index:12;}
@@ -50,26 +47,21 @@ footer > a.twit:hover{background:url(../images/social_b_twitter_hover.png) no-re
 footer > a.instar{background:url(../images/social_b_instar.png) no-repeat; right:80px;} 
 footer > a.instar:hover{background:url(../images/social_b_instar_hover.png) no-repeat;}
 #container{width:100%; height:100%; position:relative; max-width:1200px; margin:0 auto;} 
-/* transition:all은 가로/세로 모두 애니매이션 효과를 얻음. width/height의 속성이 있음.  */
-/* 만약 width만 있으면 가로만 애니메이션 효과가 있고, height는 즉시 반영됨. */
-/* 참고자료 : http://ielselog.blogspot.com/2013/09/understand-css-trasition.html */
-#container .content{width:25%; height:100%; position:absolute; transition:all .4s;} 
+#container .content{width:25%; height:100%; position:absolute; transition:all .5s;}
+/* 넓이가 1100px 이상이 안됨. 늘려보면 1100px까지만 늘어남. */
+/* 마진을 0으로 세팅하고, auto는 좌우상하 중간정렬을 의미함 */
+/* 만약 margin-left:auto라면 오른쪽에 마진이 없음. 즉 오른쪽으로 붙음 TEST 가능*/
+/* margin:0 auto; ==> 같음(margin:0; margin:auto;)  */
+#container .content.this .conbox{max-width:1100px; margin:0 auto;} 
 /*페이지 이동효과*/
-/* left의 위치를 조정. */
-/* prev는 content class의 앞쪽 <li>인데 left가 -100% / width 100%(-100%~0%)이므로 화면 앞으로 나감. */
-/* next는 content class의 뒤쪽 <li>인제 left가 100% / width 100% 이므로 (100%~200%) 이므로 화면 뒤로 나감 */
-/* this만 화면에 바로 보임 */
-/* !important는 같은 곳에 속성이 여러번 선택되었을 때 마지막만 처리됨. 이를 방지하기 위해 important 처리함 */
-#container .content.this{width:100%; left:0 !important;} 
+#container .content.this{width:100%; left:0 !important; height:100%; overflow:hidden; overflow-y:auto} 
 #container .content.prev{width:100%; left:-100% !important;} 
 #container .content.next{width:100%; left:100% !important;}
-
 #container .content.this:before, #container .content.this:after,
 #container .content.this .conbox:before, #container .content.prev:before,
 #container .content.prev:after, #container .content.prev .conbox:before,
 #container .content.next:before, #container .content.next:after,
 #container .content.next .conbox:before{opacity:0; transition:all .6s; transition-delay:.3s;}
-/* transform:translate3d는 x,y,z 만큼 이동. */
 #container .content.this .conbox:before{transform:translate3d(300px, 0, 0);}
 #container .content.this:after{transform:translate3d(-300px, 0, 0);}
 #container #menu1{left:0%; background:url(../images/content_bg1.png) repeat;} 
@@ -94,21 +86,42 @@ footer > a.instar:hover{background:url(../images/social_b_instar_hover.png) no-r
 /* content this가 되면 h2가 살아남 (opacity 1이 됨) */
 /* 회사소개 시간을 조정함. transition-delay는 시작하기 전 대기시간임*/
 #container .content.this h2{height:auto; padding:30px 0 20px 50px; color:#000; position:relative; background:#fff; font-size:28px; font-weight:400; opacity:1; transition:all .6s; transition-delay:1.2s;}
-/* 회사소개 밑줄을 의미함 */
 #container .content.this h2:after{content:""; width:100%; height:8px; background:#ed3140; position:absolute; left:0; bottom:0;}
 #container .content .conbox .content_wrap{opacity:0;}
-#container .content.this .conbox .content_wrap{padding:30px 50px 50px 50px; opacity:1;}
+/* transition-delay가 0.8초인 이유는 앞쪽의 이동시간을 고려해야 하기 때문임 */
+#container .content.this .conbox .content_wrap{padding:30px 50px 50px 50px; opacity:1; transition:all 1.7s; transition-delay:.1s;}
 /*애니메이션 효과 만들기*/
-/* 상단 타이틀이 우선 -100% 위치에 있음 */
 #container .content{top:-100%; transition:all .8s;}
-/* transition-delay로 인해 각 li별 시간차가 있음. */
 #container .content:nth-of-type(2){transition-delay:.3s;}
 #container .content:nth-of-type(3){transition-delay:.6s;}
 #container .content:nth-of-type(4){transition-delay:.8s;}
-/* Jquery에서 시작시  #container에 class="start"를 함 */
 #container.start .content{top:0;}
-
-
+/*회사소개 페이지*/
+/* 이지스퍼블리싱 설명 */
+.pargrph_tit{margin-bottom:50px; font-size:24px; color:#fff; position:relative;}
+/* 밑줄의 표현 */
+.pargrph_tit:after{content:""; display:block; width:30px; height:8px; background:#ed3140; position:absolute; left:0; bottom:-10px;}
+.text_box{position:relative;}
+/* 소제목 "사람을 구체적으로..."의 부분 정의 */
+.text_box h4{font-size:40px; color:#d6d4d4; font-weight:700;}
+/* 소제목 밑의 내용 정의 */
+.text_box p{margin-bottom:50px; color:#ababab; line-height:20px;}
+/* 홀수는 왼쪽 정렬 */
+.text_box:nth-child(odd){text-align:left;}
+/* 짝수는 오른쪽 정렬 */
+.text_box:nth-child(even){text-align:right;}
+/* 1번째 항목의 after에 이미지 추가. background-size는 넓이, 높이임. */
+.text_box:nth-child(1):after{content:""; display:block; width:206px; height:100%; position:absolute; right:0; top:0; background:url(../images/content_img1.png) no-repeat right top; background-size:206px auto;}
+/* 1번째 항목의 이미지가 들어갈 부분에 padding을 두어 자리를 비움 */
+.text_box:nth-child(1) p{width:100%; padding-right:206px;}
+/* 끝에서 1번째 항목의 before에 이미지 추가, 위로부터 70px 아래로 이미지 배치 */
+.text_box:nth-last-child(1):before{content:""; width:150px; height:250px; position:absolute; left:0; top:70px; background:url(../images/content_img2.png) no-repeat right top; background-size:150px;}
+/* 끝에서 1번째 항목의 after에 이미지 추가, 위로 -70px만큼 침범하여 이미지 배치 */
+.text_box:nth-last-child(1):after{content:""; display:block; width:170px; height:280px; position:absolute; right:0; top:-20px; background:url(../images/content_img3.png) no-repeat right top; background-size:170px;}
+/* 끝에서 1번째 항목의 이미지가 들어갈 부분에 padding(left, right)을 두어 자리를 비움 */
+.text_box:nth-last-child(1) p{padding:0 200px 0 280px;}
+/* 끝에서 1번째 항목의 h4에 붉은색으로 표시 */
+.text_box:nth-last-child(1) h4{color:#ed3140;}
 
 
 

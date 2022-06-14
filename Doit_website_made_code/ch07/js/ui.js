@@ -27,6 +27,10 @@ $(document).ready(function(){
 		$(".book_roll li").eq(-1).insertBefore(".book_roll li:first-child");
 	});
 	//ajax 사용하기
+	// 크롬 우클릭. 대상 부분에 --allow-file-access-from-files 이것을 추가로 붙임.
+	// 모든 크롬을 다시 시작.
+	// 실습에서는 article에 보냈던 것을 notebook에 보내는 것임.
+	// TEST : 아래 내용을 지우고, FETCH 스타일로 TEST 할 것.
 	$(".book_roll li").click(function(){
 		var _this =$(this);
 		var liurl =_this.data("url");
